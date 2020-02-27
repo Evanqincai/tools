@@ -1,0 +1,11 @@
+library(grid)
+library(VennDiagram)
+data<-read.table("list.txt",header=F,sep="\t")
+temp<-data[,2]
+aa<-temp[!is.na(temp)]
+temp<-data[,3]
+bb<-temp[!is.na(temp)]
+temp<-data[,4]
+cc<-temp[!is.na(temp)]
+venn.diagram(list(aa=aa,bb=bb,cc=cc),margin=0.25,height=800,width=800,resolution=200,units='px',lwd=1,fill=c('cornflowerblue','green','yellow'),cex=0.7,cat.cex=0.9,scaled=0,,category.name=c("1","2","3"),filename="venn.png",cat.dist=c(0.12,0.12,0.07),imagetype="png")
+venn.diagram(list(aa=aa,bb=bb,cc=cc),margin=0.25,height=800/200,width=800/200,resolution=200,units='px',lwd=1,fill=c('cornflowerblue','green','yellow'),cex=0.7,cat.cex=0.9,scaled=0,,category.name=c("1","2","3"),filename="venn.svg",cat.dist=c(0.12,0.12,0.07),imagetype="svg")

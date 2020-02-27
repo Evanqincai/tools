@@ -1,0 +1,8 @@
+perl /lustre/rdi/user/licq/research/RNA_seq/blastx/Script/random_extract_fq.pl /lustre/rdi/user/licq/project/RNA-Seq/20180827_henan_RNA/diamond/lowQua_rawdata/HB02T_S2.R1.fastq.gz 60 out/fasta/HB02T_S2.R1.random >out/fasta/HB02T_S2.R1.fasta
+/lustre/rdi/user/licq/research/diamond/ncbi-blast-2.7.1+/bin/blastx -query  out/fasta/HB02T_S2.R1.fasta -out out/HB02T_S2.R1.fasta.readxml -evalue 10 -max_target_seqs 1 -outfmt 5 -db /lustre/rdi/user/licq/project/RNA-Seq/20180827_henan_RNA/diamond/NR/nr -num_threads 5
+perl /lustre/rdi/user/licq/research/RNA_seq/blastx/Script/blast.xml.ab.pl out/HB02T_S2.R1.fasta.readxml >out/parsed.HB02T_S2.R1.fasta.readxml
+perl /lustre/rdi/user/licq/research/RNA_seq/blastx/Script/extract_species.pl 60 out/parsed.HB02T_S2.R1.fasta.readxml >out/summarized.parsed.HB02T_S2.R1.fasta.xls
+perl /lustre/rdi/user/licq/research/RNA_seq/blastx/Script/random_extract_fq.pl /lustre/rdi/user/licq/project/RNA-Seq/20180827_henan_RNA/diamond/lowQua_rawdata/HB04T_S4.R1.fastq.gz 60 out/fasta/HB04T_S4.R1.random >out/fasta/HB04T_S4.R1.fasta
+/lustre/rdi/user/licq/research/diamond/ncbi-blast-2.7.1+/bin/blastx -query  out/fasta/HB04T_S4.R1.fasta -out out/HB04T_S4.R1.fasta.readxml -evalue 10 -max_target_seqs 1 -outfmt 5 -db /lustre/rdi/user/licq/project/RNA-Seq/20180827_henan_RNA/diamond/NR/nr -num_threads 5
+perl /lustre/rdi/user/licq/research/RNA_seq/blastx/Script/blast.xml.ab.pl out/HB04T_S4.R1.fasta.readxml >out/parsed.HB04T_S4.R1.fasta.readxml
+perl /lustre/rdi/user/licq/research/RNA_seq/blastx/Script/extract_species.pl 60 out/parsed.HB04T_S4.R1.fasta.readxml >out/summarized.parsed.HB04T_S4.R1.fasta.xls
