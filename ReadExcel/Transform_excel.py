@@ -28,23 +28,6 @@ def Merge (args):
                 else:
                     continue
                 file_content.to_excel(writer,filename,header=True)
-                workbook1 = writer.book
-                #border_format = workbook1.add_format({'border': True})
-                #worksheets = writer.sheets[filename]
-                ws = writer.sheets[filename]
-                last_column = ws.range(1, 1).end('right').get_address(0, 0)[0] 
-                last_row = ws.range(1, 1).end('down').row 
-                a_range = f'A1:{last_column}{last_row}'   
-
-                ws.range(a_range).api.Borders(9).LineStyle = 1  
-                ws.range(a_range).api.Borders(7).LineStyle = 1  
-                ws.range(a_range).api.Borders(10).LineStyle = 1
-                ws.range(a_range).api.Borders(12).LineStyle = 1  
-                ws.range(a_range).api.Borders(11).LineStyle = 1  
-                #worksheets.write( border_format)
-                #for col_num,value in enumerate(file_content.columns.values):
-                 #   worksheets.write(1,col_num,value,border_format)
-
             else:
                 print("The\t"+filename+"\tfile\tempty") 
     writer.save()
